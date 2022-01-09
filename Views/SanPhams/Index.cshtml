@@ -1,0 +1,100 @@
+﻿@*@model IEnumerable<NamCamera.Models.SanPham>*@
+@model PagedList.IPagedList<NamCamera.Models.SanPham>
+@using PagedList.Mvc
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--#region Body -->
+
+<div id="container" class="container">
+
+
+    <main id="main" class="site-main row" role="main">
+        <p class="woocommerce-result-count">
+            <a href="/TinTucs/News" style ="font-size:20px;" class="text-warning">Tin tức nổi bật</a>
+        </p>
+
+        <div id="content" class="col-md-12">
+
+            <div class="ql_woocommerce_info">
+
+                @*Tìm kiếm*@
+                <aside id="search-2" class="widget widget_search">
+                    @*<form role="search" method="get" class="search-form">*@
+                    @*Html.BeginForm("MyActionName", "MyControllerName", FormMethod.Post, new { @class = "myclass"})*@
+                    @using (Html.BeginForm(new { @class = "search-form" }))
+                    {
+                        <label>
+                            <span>
+                                <input type="search" class="search-field" placeholder="Search ..." value="@ViewBag.TimKiem" id="searchStr" name="searchStr">
+                            </span>
+                        </label>
+                        <input type="submit" class="search-submit" value="Search">
+                        @*<button onclick="searchFunction()" >Tìm kiếm</button>*@
+                    }
+
+                    @*</form>*@
+                </aside>
+
+
+                <ul class="products columns-4 masonry">
+
+                    @foreach (var item in Model)
+                    {
+                        <li class="product type-product post-65 status-publish outofstock product_cat-furniture product_tag-metal has-post-thumbnail shipping-taxable purchasable product-type-variable">
+                            <a href="/Sanphams/Details/@Html.DisplayFor(modelItem => item.SanPhamID)"
+                               class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                                <div class="product_thumbnail_wrap">
+                                    <img width="348" height="218"
+                                         src="~/Content/CameraImages/@Html.DisplayFor(modelItem => item.Anh01)" @*ảnh 1*@
+                                         class="attachment-shop_catalog size-shop_catalog" alt=""
+                                         sizes="(max-width: 348px) 100vw, 348px" /><img width="348" height="218"
+                                                                                        src="~/Content/CameraImages/@Html.DisplayFor(modelItem => item.Anh02)" @*ảnh 2*@
+                                                                                        class="product_second_img" alt="" />
+
+                                </div>
+                                <div class="product_text" style="background-color: rgb(255, 223, 183);">
+                                    <h2 class="woocommerce-loop-product__title" style="color: black; font-size: 20px;">@Html.DisplayFor(modelItem => item.TenSanPham)</h2>  @*Tên sản phẩm*@
+                                    <span class="price">
+                                        <span class="woocommerce-Price-amount amount">
+                                            <span class="woocommerce-Price-currencySymbol"> <span>Giá</span> &#36;</span>
+                                            <span>@Html.DisplayFor(modelItem => item.GiaBan) </span> @*Giá tiền*@
+                                        </span>
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+
+                    }
+
+                </ul>
+
+                <div style="height:60px;"></div>
+                <div style="text-align:center">Page @(Model.PageCount<Model.PageNumber?0:Model.PageNumber) of @Model.PageCount</div>
+                <div style="text-align:center">@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))</div>
+
+
+
+
+
+                <div class="clearfix"></div>
+
+
+            </div><!-- /content -->
+
+    </main><!-- #main -->
+
+</div><!-- /#container -->
+<!--#endregion -->
+@*<script>
+        function searchFunction() {
+            var x = document.getElementById("searchStr").value;
+
+            @Session["SearchSanPham"] = x;
+            document.getElementById("demo").innerHTML = "Bạn đang tìm kiếm từ khóa: ";
+        }
+    </script>*@

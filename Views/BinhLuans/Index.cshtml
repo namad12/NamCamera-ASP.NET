@@ -1,0 +1,46 @@
+﻿@model IEnumerable<NamCamera.Models.BinhLuan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SanPham.TenSanPham)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaiKhoan.TenDangNhap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SanPham.TenSanPham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaiKhoan.TenDangNhap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoiDung)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BinhLuanID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BinhLuanID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BinhLuanID })
+        </td>
+    </tr>
+}
+
+</table>

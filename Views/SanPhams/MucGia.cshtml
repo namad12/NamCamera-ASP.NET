@@ -1,0 +1,56 @@
+﻿@model PagedList.IPagedList<NamCamera.Models.SanPham>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "MucGia";
+}
+
+<h4>
+    Trang chủ > Mức giá >
+    <span>
+        <a style="color:orange" href="#">@Session["mucGia"]</a>
+   
+    </span>
+</h4>
+<hr />
+
+<div style="margin-left:250px;">
+    <ul class="products columns-4 masonry">
+
+        @foreach (var item in Model)
+        {
+            <li class="product type-product post-65 status-publish outofstock product_cat-furniture product_tag-metal has-post-thumbnail shipping-taxable purchasable product-type-variable">
+                <a href="/Sanphams/Details/@Html.DisplayFor(modelItem => item.SanPhamID)"
+                   class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                    <div class="product_thumbnail_wrap">
+                        <img width="348" height="218"
+                             src="~/Content/CameraImages/@Html.DisplayFor(modelItem => item.Anh01)" @*ảnh 1*@
+                             class="attachment-shop_catalog size-shop_catalog" alt=""
+                             sizes="(max-width: 348px) 100vw, 348px" /><img width="348" height="218"
+                                                                            src="~/Content/CameraImages/@Html.DisplayFor(modelItem => item.Anh02)" @*ảnh 2*@
+                                                                            class="product_second_img" alt="" />
+
+                    </div>
+                    <div class="product_text" style="background-color: rgb(255, 223, 183);">
+                        <h2 class="woocommerce-loop-product__title" style="color: black; font-size: 20px;">@Html.DisplayFor(modelItem => item.TenSanPham)</h2>  @*Tên sản phẩm*@
+                        <span class="price">
+                            <span class="woocommerce-Price-amount amount">
+                                <span class="woocommerce-Price-currencySymbol"> Giá: &#36;</span>
+                                <span>@Html.DisplayFor(modelItem => item.GiaBan) </span> @*Giá tiền*@
+                            </span>
+                        </span>
+                    </div>
+                </a>
+            </li>
+
+        }
+
+    </ul>
+
+</div>
+
+<div style="height:60px;"></div>
+<div style="text-align:center">Page @(Model.PageCount<Model.PageNumber?0:Model.PageNumber) of @Model.PageCount</div>
+<div style="text-align:center">@Html.PagedListPager(Model, pageGia => Url.Action("MucGia", new { pageGia }) )</div>
+
+
+<div class="clearfix"></div>

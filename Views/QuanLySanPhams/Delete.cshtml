@@ -1,0 +1,106 @@
+﻿@model NamCamera.Models.SanPham
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutManagement.cshtml";
+}
+
+<h2>Bạn chắc chắn muốn xóa máy ảnh này ?</h2>
+<h4 class="text-danger">@ViewBag.Error</h4>
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt >
+            @Html.DisplayNameFor(model => model.TenSanPham)
+        </dt>
+
+        <dd style="color:orange; font-size:50px;">
+            @Html.DisplayFor(model => model.TenSanPham)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaNhap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaNhap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaBan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anh01)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Anh01)*@
+            <img width="500px;" height="500px;" src="~/Content/CameraImages/@Model.Anh01" class="rounded" alt="ảnh" />
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anh02)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Anh02)*@
+            <img width="500px;" height="500px;" src="~/Content/CameraImages/@Model.Anh02" class="rounded" alt="ảnh" />
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anh03)
+        </dt>
+
+        <dd>
+            <img width="500px;" height="500px;" src="~/Content/CameraImages/@Model.Anh03" class="rounded" alt="ảnh" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThongTin)
+        </dt>
+
+        <dd>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" >
+                @Model.ThongTin
+</textarea>
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-primary mr-2">Xóa</button>
+                <a href="/QuanLySanPhams/Xoa">
+                    <input style="width:80px; height:45px;" class="btn btn-light" value="Hủy" />
+                </a>
+            </div>
+        </div>
+    }
+</div>

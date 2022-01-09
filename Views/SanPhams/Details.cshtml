@@ -1,0 +1,504 @@
+﻿@model NamCamera.Models.SanPham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main" class="site-main row" role="main">
+    <div id="content" class="col-md-12">
+
+        <div class="woocommerce-notices-wrapper"></div>
+        <div id="product-104"
+             class="product type-product post-104 status-publish first instock product_cat-kitchen product_tag-wood has-post-thumbnail shipping-taxable purchasable product-type-simple">
+
+            <div class="clearfix"></div>
+            <div class="row">
+                @*#region Phần ảnh*@
+                <div class="col-md-7">
+                    <div class="images">
+
+                        <div class="ql_main_image_column_wrap">
+                            <div class="ql_main_image_column                                         woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images"
+                                 data-columns="4">
+                                <div class="ql_main_images owl-carousel woocommerce-product-gallery__wrapper">
+                                    <div data-thumb="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01)"
+                                         data-thumb-alt="" class="woocommerce-product-gallery__image">
+                                        <a href="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01)">
+                                            <img width="869" height="543"
+                                                 src="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01)"
+                                                 class="wp-post-image" alt=""
+                                                 data-caption=""
+                                                 data-src="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01)"
+                                                 data-large_image="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01)"
+                                                 data-large_image_width="1440" data-large_image_height="900"
+                                                 srcset="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01) 1440w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01) 300w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01) 768w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01) 1024w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01) 197w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01) 348w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01) 869w"
+                                                 sizes="(max-width: 869px) 100vw, 869px" />
+                                        </a>
+                                    </div>
+                                    <div data-thumb="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02)"
+                                         data-thumb-alt="" class="woocommerce-product-gallery__image">
+                                        <a href="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02)">
+                                            <img width="869" height="543"
+                                                 src="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02)"
+                                                 class="wp-post-image" alt=""
+                                                 data-caption=""
+                                                 data-src="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02)"
+                                                 data-large_image="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02)"
+                                                 data-large_image_width="1440" data-large_image_height="900"
+                                                 srcset="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02) 1440w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02) 300w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02) 768w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02) 1024w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02) 197w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02) 348w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02) 869w"
+                                                 sizes="(max-width: 869px) 100vw, 869px" />
+                                        </a>
+                                    </div>
+                                    <div data-thumb="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03)"
+                                         data-thumb-alt="" class="woocommerce-product-gallery__image">
+                                        <a href="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03)">
+                                            <img width="869" height="543"
+                                                 src="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03)"
+                                                 class="wp-post-image" alt="" title="356995_Astro_Tray_32x20_2"
+                                                 data-caption=""
+                                                 data-src="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03)"
+                                                 data-large_image="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03)"
+                                                 data-large_image_width="1440" data-large_image_height="900"
+                                                 srcset="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03) 1440w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03) 300w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03) 768w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03) 1024w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03) 197w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03) 348w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03) 869w"
+                                                 sizes="(max-width: 869px) 100vw, 869px" />
+                                        </a>
+                                    </div>
+                                </div><!-- /ql_main_images -->
+
+                                <a href="#" class="ql_main_images_btn ql_prev"><i class="ql-arrow-left"></i></a>
+                                <a href="#" class="ql_main_images_btn ql_next">
+                                    <i class="ql-arrow-right"></i>
+                                </a>
+                            </div><!-- /ql_main_image_column -->
+                        </div><!-- /ql_main_image_column_wrap -->
+
+                        <div class="ql_thumbnail_column">
+
+                            <div class="columns-3 thumbnails">
+                                <div data-thumb="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01)"
+                                     data-thumb-alt="" class="woocommerce-product-gallery__image">
+                                    <a href="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01)">
+                                        <img width="869" height="543"
+                                             src="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01)"
+                                             class="" alt="" data-caption=""
+                                             data-src="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01)"
+                                             data-large_image="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01)"
+                                             data-large_image_width="1440" data-large_image_height="900"
+                                             srcset="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01) 1440w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01) 300w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01) 768w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01) 1024w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01) 197w,~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01) 348w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh01) 869w"
+                                             sizes="(max-width: 869px) 100vw, 869px" />
+                                    </a>
+                                </div>
+                                <div data-thumb="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02)"
+                                     data-thumb-alt="" class="woocommerce-product-gallery__image">
+                                    <a href="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02)">
+                                        <img width="869" height="543"
+                                             src="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02)"
+                                             class="" alt="" data-caption=""
+                                             data-src="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02)"
+                                             data-large_image="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02)"
+                                             data-large_image_width="1440" data-large_image_height="900"
+                                             srcset="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02) 1440w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02) 300w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02) 768w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02) 1024w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02) 197w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02) 348w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh02) 869w"
+                                             sizes="(max-width: 869px) 100vw, 869px" />
+                                    </a>
+                                </div>
+                                <div data-thumb="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03)"
+                                     data-thumb-alt="" class="woocommerce-product-gallery__image">
+                                    <a href="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03)">
+                                        <img width="869" height="543"
+                                             src="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03)"
+                                             class="" alt="" data-caption=""
+                                             data-src="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03)"
+                                             data-large_image="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03)"
+                                             data-large_image_width="1440" data-large_image_height="900"
+                                             srcset="~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03) 1440w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03) 300w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03) 768w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03) 1024w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03) 197w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03) 348w, ~/Content/CameraImages/@Html.DisplayFor(model => model.Anh03) 869w"
+                                             sizes="(max-width: 869px) 100vw, 869px" />
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div><!-- /ql_thumbnail_column -->
+
+                    </div><!-- /images -->
+                </div><!-- /col-md-7 -->
+                @*#endregion*@
+
+                @*#region Phần thông tin*@
+                <div class="col-md-5">
+
+                    <div class="summary entry-summary">
+                        <div class="summary-top">
+                            @*Tên sản phẩm*@
+                            <h1 class="product_title entry-title"> @Html.DisplayFor(model => model.TenSanPham)</h1> @*Tên sản phẩm*@
+                            <div class="clearfix"></div>
+                        </div><!-- /summary-top -->
+                        <div class="entry">
+
+                            <p class="price">
+                                <span class="woocommerce-Price-amount amount">
+                                    @*Giá sản phẩm*@
+                                    <span class="woocommerce-Price-currencySymbol"> Giá bán: &#36;</span>
+                                    @Html.DisplayFor(model => model.GiaBan)                     @*Giá bán*@
+                                </span>
+                            </p>
+
+                            <p class="product_title entry-title">Thông tin nổi bật</p>
+
+                            <div class="woocommerce-product-details__short-description">
+                                <p>
+                                    @*Cảm biến: APS-C
+                                        <br>Dải ISO: 160 to 12800 (Mở rộng lên 80 - 51200)
+                                        <br>Độ phân giải: 26.1MP
+                                        <br>Kết nối không dây: WiFi
+                                        <br>Màn hình LCD cảm ứng xoay lật 3
+                                        <br>Quay video: 4K/30p, DCI 4K/60p
+                                        <br>Tốc độ chụp liên tiếp: 11 - 145 fps/s (JPEG) / 42 fps/s (Raw)
+                                        <br>Trọng lượng: 539 g (Body+pin+thẻ nhớ)*@
+
+                                    @*Thông tin sản phẩm*@
+                                    @*@Html.DisplayFor(model => model.ThongTin)*@
+                                    @Html.Raw(Model.ThongTin)
+                                </p>
+                            </div>
+                            <div class="sharedaddy sd-sharing-enabled">
+                                <div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
+                                    <h3 class="sd-title">Share this:</h3>
+                                    <div class="sd-content">
+                                        <ul>
+                                            <li class="share-facebook">
+                                                <a rel="nofollow noopener noreferrer"
+                                                   data-shared="sharing-facebook-104"
+                                                   class="share-facebook sd-button share-icon no-text"
+                                                   href="index5a58.html?share=facebook" target="_blank"
+                                                   title="Click to share on Facebook">
+                                                    <span></span><span class="sharing-screen-reader-text">
+                                                        Click to share on
+                                                        Facebook (Opens in new window)
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="share-twitter">
+                                                <a rel="nofollow noopener noreferrer"
+                                                   data-shared="sharing-twitter-104"
+                                                   class="share-twitter sd-button share-icon no-text"
+                                                   href="index9a7b.html?share=twitter" target="_blank"
+                                                   title="Click to share on Twitter">
+                                                    <span></span><span class="sharing-screen-reader-text">
+                                                        Click to share on
+                                                        Twitter (Opens in new window)
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="share-jetpack-whatsapp">
+                                                <a rel="nofollow noopener noreferrer" data-shared=""
+                                                   class="share-jetpack-whatsapp sd-button share-icon no-text"
+                                                   href="index7d75.html?share=jetpack-whatsapp" target="_blank"
+                                                   title="Click to share on WhatsApp">
+                                                    <span></span><span class="sharing-screen-reader-text">
+                                                        Click to share on
+                                                        WhatsApp (Opens in new window)
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="share-end"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="variations_button_entry">
+
+
+                                <form class="cart"
+                                      action="https://demo.quemalabs.com/ocin-lite/product/astro-tray/"
+                                      method="post" enctype='multipart/form-data'>
+
+                                    <div class="quantity">
+                                        <label class="screen-reader-text" for="quantity_619cba1f77973">
+                                            Astro
+                                            Tray quantity
+                                        </label>
+                                        <input type="number" id="quantity_619cba1f77973"
+                                               class="input-text qty text" step="1" min="1" max="" name="quantity"
+                                               value="1" title="Qty" size="4" inputmode="numeric" />
+                                    </div>
+
+                                    <button type="submit" name="add-to-cart" value="104"
+                                            class="single_add_to_cart_button button alt">
+                                        Mua ngay
+                                    </button>
+
+                                </form>
+
+
+                            </div>
+                        </div><!-- /entry -->
+                        <div class="summary-bottom">
+                            <div class="woocommerce-variation-add-to-cart variations_button">
+
+
+                                <form class="cart"
+                                      action="https://demo.quemalabs.com/ocin-lite/product/astro-tray/"
+                                      method="post" enctype='multipart/form-data'>
+
+                                    <div class="quantity">
+                                        <label class="screen-reader-text" for="quantity_619cba1f77aec">
+                                            Astro
+                                            Tray quantity
+                                        </label>
+                                        <input type="number" id="quantity_619cba1f77aec"
+                                               class="input-text qty text" step="1" min="1" max="" name="quantity"
+                                               value="1" title="Qty" size="4" inputmode="numeric" />
+                                    </div>
+
+                                    <button type="submit" name="add-to-cart" value="104"
+                                            class="single_add_to_cart_button button alt">
+                                        Mua ngay
+                                    </button>
+
+                                </form>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div><!-- /col-md-5 -->
+                @*#endregion*@
+
+            </div><!-- /row -->
+            <!-- THÔNG TIN CHI TIẾT SẢN PHẨM -->
+            <div class="woocommerce-tabs wc-tabs-wrapper">
+                <ul class="tabs wc-tabs" role="tablist">
+                    <li class="description_tab" id="tab-title-description" role="tab"
+                        aria-controls="tab-description">
+                        <a href="#tab-description">
+                            Bình luận
+                        </a>
+                    </li>
+                </ul>
+
+                <!--#region BÌNH LUẬN -->
+                <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--reviews panel entry-content wc-tab"
+                     id="tab-reviews" role="tabpanel" aria-labelledby="tab-title-reviews">
+                    <div id="reviews" class="woocommerce-Reviews">
+                        <div id="comments">
+
+
+                            <ol class="commentlist">
+                                <!-- #comment-## -->
+                                @{
+                                    var lstCmt = (List<string>)Session["NoiDung"];
+                                    var lstTen = (List<string>)Session["Ten"];
+                                    for (int i = 0; i < (int)Session["countCmt"]; i++)
+                                    {
+                                        <li class="review odd alt thread-odd thread-alt depth-1" id="li-comment-1959">
+
+                                            <div id="comment-1959" class="comment_container">
+
+                                                <img alt="" src="https://secure.gravatar.com/avatar/2cf3fbc5ed48520f4bc09f97aa06e0fa?s=60&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/2cf3fbc5ed48520f4bc09f97aa06e0fa?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">
+                                                <div class="comment-text">
+
+
+                                                    <p class="meta">
+                                                        <em class="woocommerce-review__awaiting-approval">Tên: @lstTen[i]</em>
+                                                    </p>
+
+                                                    <div class="description">
+                                                        <p>Bình luận: @lstCmt[i]</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li><!-- #comment-## -->
+
+                                    }
+                                }
+                            </ol>
+
+
+                        </div>
+
+                        <div id="review_form_wrapper">
+                            <div id="review_form">
+                                <div id="respond" class="comment-respond">
+
+
+                                    @using (Html.BeginForm("Details", "SanPhams", FormMethod.Post))
+                                    {
+                                        <p class="comment-form-comment">
+                                            <label for="comment">
+                                                Bình luận &nbsp;<span class="required"></span>
+                                                <span class="text-danger">( *@ViewBag.Error )</span>
+                                            </label>
+                                            <textarea id="comment" name="comment" cols="45" rows="8"
+                                                      required></textarea>
+                                        </p>
+
+
+                                        <p class="form-submit">
+                                            <input name="submit" type="submit" id="submit"
+                                                   class="submit" value="Gửi" />
+                                            <input type='hidden'
+                                                   name='comment_post_ID' value='104' id='comment_post_ID' />
+                                            <input type='hidden' name='comment_parent' id='comment_parent'
+                                                   value='0' />
+                                        </p>
+                                    }
+
+                                </div><!-- #respond -->
+                            </div>
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <!--#endregion -->
+            </div>
+
+            <!--#region SẢN PHẨM LIÊN QUAN -->
+            <section class="related products">
+
+                <h2>Sản phẩm liên quan</h2>
+
+                <ul class="products columns-5 masonry">
+
+                    <li class="product type-product post-84 status-publish instock product_cat-kitchen has-post-thumbnail shipping-taxable purchasable product-type-simple">
+                        <a href="/SanPhams/Details/5"
+                           class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                            <div class="product_thumbnail_wrap">
+                                <img width="348" height="218"
+                                     src="~/Content/CameraImages/Canon Mark 01.jpg"
+                                     class="attachment-shop_catalog size-shop_catalog" alt=""
+                                     srcset="~/Content/CameraImages/Canon Mark 01.jpg 348w, ~/Content/CameraImages/Canon Mark 01.jpg 300w, ~/Content/CameraImages/Canon Mark 01.jpg 768w, ~/Content/CameraImages/Canon Mark 01.jpg 1024w, ~/Content/CameraImages/Canon Mark 01.jpg 197w, ~/Content/CameraImages/Canon Mark 01.jpg 869w, ~/Content/CameraImages/Canon Mark 01.jpg 1440w"
+                                     sizes="(max-width: 348px) 100vw, 348px" /><img width="348" height="218"
+                                                                                    src="~/Content/CameraImages/Canon Mark 02.jpg"
+                                                                                    class="product_second_img" alt="" />
+                                <div class="add_to_cart_wrap">
+                                    <button rel="nofollow"
+                                            href="index1278.html?add-to-cart=84" data-quantity="1"
+                                            data-product_id="84" data-product_sku=""
+                                            class="button product_type_simple add_to_cart_button ajax_add_to_cart">
+                                        <i class="ql-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product_text">
+                                <h2 class="woocommerce-loop-product__title">Canon Mark</h2>
+                                <span class="price">
+                                    <span class="woocommerce-Price-amount amount">
+                                        <span class="woocommerce-Price-currencySymbol">&#36;</span>28
+                                    </span>
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+
+                    <li class="product type-product post-84 status-publish instock product_cat-kitchen has-post-thumbnail shipping-taxable purchasable product-type-simple">
+                        <a href="/SanPhams/Details/25"
+                           class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                            <div class="product_thumbnail_wrap">
+                                <img width="348" height="218"
+                                     src="~/Content/CameraImages/Canon Mark II 01.jpg"
+                                     class="attachment-shop_catalog size-shop_catalog" alt=""
+                                     srcset="~/Content/CameraImages/Canon Mark II 01.jpg 348w, ~/Content/CameraImages/Canon Mark II 01.jpg 300w, ~/Content/CameraImages/Canon Mark II 01.jpg 768w, ~/Content/CameraImages/Canon Mark II 01.jpg 1024w, ~/Content/CameraImages/Canon Mark 01.jpg 197w, ~/Content/CameraImages/Canon Mark II 01.jpg 869w, ~/Content/CameraImages/Canon Mark II 01.jpg  1440w"
+                                     sizes="(max-width: 348px) 100vw, 348px" /><img width="348" height="218"
+                                                                                    src="~/Content/CameraImages/Canon Mark II 02.jpg "
+                                                                                    class="product_second_img" alt="" />
+                                <div class="add_to_cart_wrap">
+                                    <button rel="nofollow"
+                                            href="index1278.html?add-to-cart=84" data-quantity="1"
+                                            data-product_id="84" data-product_sku=""
+                                            class="button product_type_simple add_to_cart_button ajax_add_to_cart">
+                                        <i class="ql-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product_text">
+                                <h2 class="woocommerce-loop-product__title">Canon Mark II</h2>
+                                <span class="price">
+                                    <span class="woocommerce-Price-amount amount">
+                                        <span class="woocommerce-Price-currencySymbol">&#36;</span>36
+                                    </span>
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="product type-product post-84 status-publish instock product_cat-kitchen has-post-thumbnail shipping-taxable purchasable product-type-simple">
+                        <a href="/SanPhams/Details/11"
+                           class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                            <div class="product_thumbnail_wrap">
+                                <img width="348" height="218"
+                                     src="~/Content/CameraImages/Sony RX10M3 01.jpg"
+                                     class="attachment-shop_catalog size-shop_catalog" alt=""
+                                     srcset="~/Content/CameraImages/Sony RX10M3 01.jpg 348w, ~/Content/CameraImages/Sony RX10M3 01.jpg 300w, ~/Content/CameraImages/Sony RX10M3 01.jpg 768w, ~/Content/CameraImages/Sony RX10M3 01.jpg 1024w, ~/Content/CameraImages/Sony RX10M3 01.jpg 197w, ~/Content/CameraImages/Sony RX10M3 01.jpg 869w, ~/Content/CameraImages/Sony RX10M3 01.jpg 1440w"
+                                     sizes="(max-width: 348px) 100vw, 348px" /><img width="348" height="218"
+                                                                                    src="~/Content/CameraImages/Sony RX10M3 02.jpg"
+                                                                                    class="product_second_img" alt="" />
+                                <div class="add_to_cart_wrap">
+                                    <button rel="nofollow"
+                                            href="index1278.html?add-to-cart=84" data-quantity="1"
+                                            data-product_id="84" data-product_sku=""
+                                            class="button product_type_simple add_to_cart_button ajax_add_to_cart">
+                                        <i class="ql-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product_text">
+                                <h2 class="woocommerce-loop-product__title">Sony RX10M3</h2>
+                                <span class="price">
+                                    <span class="woocommerce-Price-amount amount">
+                                        <span class="woocommerce-Price-currencySymbol">&#36;</span>12
+                                    </span>
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="product type-product post-84 status-publish instock product_cat-kitchen has-post-thumbnail shipping-taxable purchasable product-type-simple">
+                        <a href="/SanPhams/Details/10"
+                           class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                            <div class="product_thumbnail_wrap">
+                                <img width="348" height="218"
+                                     src="~/Content/CameraImages/Nikon AF-P 01.jpg"
+                                     class="attachment-shop_catalog size-shop_catalog" alt=""
+                                     srcset="~/Content/CameraImages/Nikon AF-P 01.jpg 348w, ~/Content/CameraImages/Nikon AF-P 01.jpg 300w, ~/Content/CameraImages/Nikon AF-P 01.jpg 768w, ~/Content/CameraImages/Nikon AF-P 01.jpg 1024w, ~/Content/CameraImages/Nikon AF-P 01.jpg 197w, ~/Content/CameraImages/Nikon AF-P 01.jpg 869w, ~/Content/CameraImages/Nikon AF-P 01.jpg 1440w"
+                                     sizes="(max-width: 348px) 100vw, 348px" /><img width="348" height="218"
+                                                                                    src="~/Content/CameraImages/Nikon AF-P 02.jpg"
+                                                                                    class="product_second_img" alt="" />
+                                <div class="add_to_cart_wrap">
+                                    <button rel="nofollow"
+                                            href="index1278.html?add-to-cart=84" data-quantity="1"
+                                            data-product_id="84" data-product_sku=""
+                                            class="button product_type_simple add_to_cart_button ajax_add_to_cart">
+                                        <i class="ql-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product_text">
+                                <h2 class="woocommerce-loop-product__title">Nikon AF-P</h2>
+                                <span class="price">
+                                    <span class="woocommerce-Price-amount amount">
+                                        <span class="woocommerce-Price-currencySymbol">&#36;</span>50
+                                    </span>
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </section>
+            <!--#endregion -->
+
+
+        </div>
+
+
+
+
+
+
+</main><!-- #main -->

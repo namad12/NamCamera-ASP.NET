@@ -1,0 +1,170 @@
+﻿@model NamCamera.Models.SanPham
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutManagement.cshtml";
+}
+
+<script>
+    var loadFile1 = function (event) {
+        var image = document.getElementById("output1");
+        image.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>
+<script>
+    var loadFile2 = function (event) {
+        var image = document.getElementById("output2");
+        image.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>
+<script>
+    var loadFile3 = function (event) {
+        var image = document.getElementById("output3");
+        image.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension>
+        <div class="card-body">
+            <h4 class="card-title">Thêm máy ảnh mới</h4>
+            <p class="text-danger">@ViewBag.Error</p>
+            @using (Html.BeginForm("Create", "QuanLySanPhams", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <span>
+                            <span>
+                                @Html.LabelFor(model => model.SanPhamID, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </span>
+                            <span>
+                                @Html.ValidationMessageFor(model => model.SanPhamID, "", new { @class = "text-danger" })
+                            </span>
+                        </span>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.SanPhamID, new { htmlAttributes = new { @class = "form-control" } })
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TenSanPham, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.ValidationMessageFor(model => model.TenSanPham, "", new { @class = "text-danger" })
+
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.TenSanPham, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Hang, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.ValidationMessageFor(model => model.Hang, "", new { @class = "text-danger" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Hang, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.GiaNhap, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.ValidationMessageFor(model => model.GiaNhap, "", new { @class = "text-danger" })
+
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.GiaNhap, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.GiaBan, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.ValidationMessageFor(model => model.GiaBan, "", new { @class = "text-danger" })
+
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.GiaBan, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.SoLuong, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.ValidationMessageFor(model => model.SoLuong, "", new { @class = "text-danger" })
+
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.SoLuong, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        @Html.LabelFor(model => model.Anh01, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                        <div class="col-md-10">
+                            <img id="output1" class="img-rounded" alt="ảnh" width="300" height="200"
+                                 src="~/Content/CameraImages/no image.png" />
+                            <p>
+                                <label for="ufile1" style="cursor:pointer">Chọn file ảnh: </label>
+                                <input name="ImageFile1" id="ufile1" type="file" style="display:none;" onchange="loadFile1(event)" />
+
+                            </p>
+                            @*@Html.EditorFor(model => model.Anh01, new { htmlAttributes = new { @class = "form-control" } })*@
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Anh02, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.ValidationMessageFor(model => model.Anh02, "", new { @class = "text-danger" })
+
+                        <div class="col-md-10">
+                            @*@Html.EditorFor(model => model.Anh02, new { htmlAttributes = new { @class = "form-control" } })*@
+                            <img id="output2" class="img-rounded" alt="ảnh" width="300" height="200"
+                                 src="~/Content/CameraImages/no image.png" />
+                            <p>
+                                <label for="ufile2" style="cursor:pointer">Chọn file ảnh: </label>
+                                <input name="ImageFile2" id="ufile2" type="file" style="display:none;" onchange="loadFile2(event)" />
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Anh03, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.ValidationMessageFor(model => model.Anh03, "", new { @class = "text-danger" })
+
+                        <div class="col-md-10">
+                            @*@Html.EditorFor(model => model.Anh03, new { htmlAttributes = new { @class = "form-control" } })*@
+                            <img id="output3" class="img-rounded" alt="ảnh" width="300" height="200"
+                                 src="~/Content/CameraImages/no image.png" />
+                            <p>
+                                <label for="ufile3" style="cursor:pointer">Chọn file ảnh: </label>
+                                <input name="ImageFile3" id="ufile3" type="file" style="display:none;" onchange="loadFile3(event)" />
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ThongTin, htmlAttributes: new { @class = "control-label col-md-3" })
+                        @Html.ValidationMessageFor(model => model.ThongTin, "", new { @class = "text-danger" })
+
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ThongTin, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <button type="submit" class="btn btn-primary mr-2">Thêm</button>
+                            <a href="/QuanLySanPhams/Index">
+                                <input style="width:80px; height:45px;" class="btn btn-light" value="Hủy" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

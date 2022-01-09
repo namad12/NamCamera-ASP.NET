@@ -1,0 +1,166 @@
+﻿@model NamCamera.Models.SanPham
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutManagement.cshtml";
+    var ImagePath1 = "~/Content/CameraImages/" + Model.Anh01;
+    var ImagePath2 = "~/Content/CameraImages/" + Model.Anh02;
+    var ImagePath3 = "~/Content/CameraImages/" + Model.Anh03;
+}
+
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension>
+        <div class="card-body">
+            <h4 class="card-title">Cập nhật thông tin máy ảnh</h4>
+            <p class="text-danger">
+                @Html.Raw(@ViewBag.Error)
+            </p>
+            @using (Html.BeginForm("Edit", "QuanLySanPhams", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.SanPhamID)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.TenSanPham, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.ValidationMessageFor(model => model.TenSanPham, "", new { @class = "text-danger" })
+
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.TenSanPham, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Hang, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.ValidationMessageFor(model => model.Hang, "", new { @class = "text-danger" })
+
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Hang, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.GiaNhap, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.GiaNhap, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.GiaBan, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.ValidationMessageFor(model => model.GiaBan, "", new { @class = "text-danger" })
+
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.GiaBan, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SoLuong, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.ValidationMessageFor(model => model.SoLuong, "", new { @class = "text-danger" })
+
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SoLuong, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Anh01, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    <div class="col-md-10">
+
+                        <img id="output1" class="img-rounded" alt="ảnh" width="300" height="200"
+                             src="@Url.Content(@ImagePath1)" />
+                        <p>
+                            <label for="ufile1" style="cursor:pointer">Chọn file ảnh: </label>
+                            <input name="ImageFile1" id="ufile1" type="file" style="display:none;" onchange="loadFile1(event)" />
+
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Anh02, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    <div class="col-md-10">
+
+                        <img id="output2" class="img-rounded" alt="ảnh" width="300" height="200"
+                             src="@Url.Content(@ImagePath2)" />
+                        <p>
+                            <label for="ufile2" style="cursor:pointer">Chọn file ảnh: </label>
+                            <input name="ImageFile2" id="ufile2" type="file" style="display:none;" onchange="loadFile2(event)" />
+
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Anh03, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    <div class="col-md-10">
+
+                        <img id="output3" class="img-rounded" alt="ảnh" width="300" height="200"
+                             src="@Url.Content(@ImagePath3)" />
+                        <p>
+                            <label for="ufile3" style="cursor:pointer">Chọn file ảnh: </label>
+                            <input name="ImageFile3" id="ufile3" type="file" style="display:none;" onchange="loadFile3(event)" />
+
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ThongTin, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.ValidationMessageFor(model => model.ThongTin, "", new { @class = "text-danger" })
+
+                    <div class="col-md-10">
+                        @*@Html.EditorFor(model => model.ThongTin, new { htmlAttributes = new { @class = "form-control" } })*@
+                        <textarea id="ThongTin" name="ThongTin" class="form-control" rows="6">
+                        @Model.ThongTin
+                    </textarea>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" class="btn btn-primary mr-2">Cập nhât</button>
+                        <a href="/QuanLySanPhams/CapNhat">
+                            <input style="width:80px; height:45px;" class="btn btn-light" value="Hủy" />
+                        </a>
+                    </div>
+                </div>
+
+            }
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+    var loadFile1 = function (event) {
+        var image = document.getElementById("output1");
+        image.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>
+<script>
+    var loadFile2 = function (event) {
+        var image = document.getElementById("output2");
+        image.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>
+<script>
+    var loadFile3 = function (event) {
+        var image = document.getElementById("output3");
+        image.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>

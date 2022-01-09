@@ -1,0 +1,76 @@
+﻿@model IEnumerable<NamCamera.Models.TinTuc>
+
+@{
+    ViewBag.Title = "News";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="container" class="container">
+
+    <main id="main" class="site-main row" role="main">
+        <main id="main" class="site-main col-md-8" role="main">
+
+
+
+            <article id="post-115" class="post-115 post type-post status-publish format-standard has-post-thumbnail hentry category-web-design tag-audi-2 tag-italy tag-red">
+                @{
+                    foreach (var item in Model)
+                    {
+                        if (item.TinTucID == 1)
+                        {
+                            <header class="entry-header">
+                                <h1 class="post-title">
+                                    @item.TieuDe
+                                </h1>
+                            </header><!-- .entry-header -->
+
+                            <div class="post-content">
+
+                                <div class="entry-content">
+                                    @Html.Raw(@item.NoiDung)
+                                </div><!-- .entry-content -->
+
+                                <div class="clearfix"></div>
+
+                            </div><!-- /post_content -->
+                        }
+                    }
+                }
+            </article><!-- #post-## -->
+
+
+
+        </main><!-- #main -->
+
+
+        <aside id="sidebar" class="col-md-4 widget-area" role="complementary">
+            <div>
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="~/Content/image/image_carousel_03.jpg" alt="First slide">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <aside id="meta-2" class="widget widget_meta">
+                <h4 class="widget-title">BÀI VIẾT LIÊN QUAN</h4>
+                <ul>
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            <a href="/TinTucs/ChiTiet/@item.TinTucID">
+                                @item.TieuDe
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </aside>
+        </aside><!-- #sidebar -->
+
+
+
+    </main><!-- #main -->
+
+</div>

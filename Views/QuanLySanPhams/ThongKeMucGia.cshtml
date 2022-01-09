@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "ThongKe";
+    Layout = "~/Views/Shared/_LayoutManagement.cshtml";
+}
+
+
+<div style="margin:auto; " class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+
+    </div>
+</div>
+
+<div style="width: 800px;">
+    @*<h4 class="card-title">
+        <button onclick="myFunction()" class="btn btn-primary mr-2">
+            Bảng thống kê số lượng sản phẩm còn lại trong kho phân theo Hãng
+        </button>
+    </h4>
+    <div style="height:400px;">
+        <canvas id="myChart" style="display: block; height: 210px; width: 421px;" width="631" height="315" class="chartjs-render-monitor"></canvas>
+    </div>*@
+
+    <h4 class="card-title">
+        <button onclick="PriceFunct()" class="btn btn-primary mr-2">
+            Bảng thống kê sản phẩm theo mức giá nhập vào
+        </button>
+    </h4>
+    <div style="height:400px;">
+        <canvas id="myChartGia" style="display: block; height: 210px; width: 421px;" width="631" height="315" class="chartjs-render-monitor"></canvas>
+    </div>
+</div>
+
+
+
+<p>
+    <input type="hidden" id="sony" name="sony" value="@Session["Sony"]" />
+    <input type="hidden" id="canon" name="canon" value="@Session["Canon"]" />
+    <input type="hidden" id="nikon" name="nikon" value="@Session["Nikon"]" />
+</p>
+
+<p>
+    <input type="hidden" id="gia30" name="gia30" value="@Session["Gia30"]" />
+    <input type="hidden" id="gia3070" name="gia3070" value="@Session["Gia3070"]" />
+    <input type="hidden" id="gia70" name="gia70" value="@Session["Gia70"]" />
+</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+<script>
+    function myFunction() {
+        var sony = document.getElementById("sony").value;
+        var canon = document.getElementById("canon").value;
+        var nikon = document.getElementById("nikon").value;
+
+        var xValues = ["Sony", "Canon", "Nikon"];
+        var yValues = [sony, canon, nikon];
+        var barColors = ["red", "purple", "orange"];
+
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                legend: { display: false },
+                title: {
+                    display: true,
+
+                }
+            }
+        });
+    }
+
+
+</script>
+
+<script>
+    function PriceFunct() {
+
+        var Gia30 = document.getElementById("gia30").value;
+        var Gia3070 = document.getElementById("gia3070").value;
+        var Gia70 = document.getElementById("gia70").value;
+
+        var xValues = ["Dưới 30$", "Từ 30$ - 70$", "Trên 70$"];
+        var yValues = [Gia30, Gia3070, Gia70];
+        var barColors = [
+            "#b91d47",
+            "#00aba9",
+            "#2b5797"
+        ];
+
+        new Chart("myChartGia", {
+            type: "pie",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                }
+            }
+        });
+    }
+</script>

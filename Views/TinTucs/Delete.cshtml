@@ -1,0 +1,46 @@
+﻿@model NamCamera.Models.TinTuc
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutManagement.cshtml";
+}
+
+<h3>Bạn có chắc chắn muốn xóa bài viết này không ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="font-size:20px;">
+            @Html.DisplayNameFor(model => model.TieuDe)
+        </dt>
+
+        <dd style="margin-left: 50px;">
+            @Html.DisplayFor(model => model.TieuDe)
+        </dd>
+
+        <dt style="font-size:20px;">
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </dt>
+
+        <dd>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="12">
+                @Html.DisplayFor(model => model.NoiDung)
+
+            </textarea>
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-primary mr-2">Xóa</button>
+                <a href="/TinTucs/Index">
+                    <input style="width:80px; height:45px;" class="btn btn-light" value="Hủy" />
+                </a>
+            </div>
+        </div>
+    }
+</div>

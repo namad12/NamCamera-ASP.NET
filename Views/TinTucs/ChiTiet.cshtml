@@ -1,0 +1,44 @@
+﻿@model NamCamera.Models.TinTuc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin-left:200px;" id="container" class="container">
+    <main id="main" class="site-main row" role="main">
+        <main id="main" class="site-main col-md-8" role="main">
+
+
+
+            <article id="post-115" class="post-115 post type-post status-publish format-standard has-post-thumbnail hentry category-web-design tag-audi-2 tag-italy tag-red">
+
+
+                <header class="entry-header">
+                    <h1 class="post-title">
+                        @Model.TieuDe
+                    </h1>
+                </header><!-- .entry-header -->
+
+                <div class="post-content">
+
+                    <div class="entry-content">
+                        @Html.Raw(Model.NoiDung)
+                    </div><!-- .entry-content -->
+
+                    <div class="clearfix"></div>
+
+                </div><!-- /post_content -->
+
+            </article><!-- #post-## -->
+
+
+
+        </main><!-- #main -->
+
+    </main><!-- #main -->
+    <p style="font-size:20px;">
+       < @Html.ActionLink("Quay lại", "News")
+    </p>
+</div>
+

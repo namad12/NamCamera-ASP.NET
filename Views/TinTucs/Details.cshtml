@@ -1,0 +1,42 @@
+﻿@model NamCamera.Models.TinTuc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutManagement.cshtml";
+}
+
+<div>
+    <h4>Tin tức</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TieuDe)
+        </dt>
+
+        <dd>
+            <span style="margin-left:20px; font-size:20px;">
+                @Html.DisplayFor(model => model.TieuDe)
+            </span>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </dt>
+
+        <dd>
+            @*<textarea class="form-control" id="exampleFormControlTextarea4" rows="10">
+                
+            </textarea>*@
+            <hr />
+            <span>
+                @Html.Raw(Model.NoiDung)
+
+            </span>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.TinTucID }) |*@
+    @Html.ActionLink("Quay lại", "Index")
+</p>

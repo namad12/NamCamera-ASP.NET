@@ -1,0 +1,87 @@
+﻿@model NamCamera.Models.SanPham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutManagement.cshtml";
+}
+
+<p style="color:orange; font-size:30px;">
+    @Html.ActionLink("Trang chủ", "Index")
+</p>
+
+<div>
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table style="margin:auto; width:600px;">
+                        <tr class="table-primary" style="height:40px;">
+                            <th class="thongtin">
+                                Máy ảnh
+                            </th>
+                        </tr>
+                 
+                        <tr>
+                            <td class="thongtin">
+                                <span style="color: orange; font-size:50px;">
+                                    @Html.DisplayFor(model => model.TenSanPham)
+                                </span>
+                                <p>
+                                    Hãng: @Model.Hang
+                                </p>
+                                <p>
+                                    Giá nhập: @Model.GiaNhap
+                                </p>
+                                <p>
+                                    Giá bán: @Model.GiaBan
+                                </p>
+                                <p>
+                                    Số lượng: @Model.SoLuong
+                                </p>
+                                
+                              
+                            </td>
+                        </tr>
+
+
+                        <tr class="table-primary"  style="height:40px;">
+                            <th>Thông tin máy ảnh</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.Raw(Model.ThongTin)
+                            </td>
+                            
+                        </tr>
+
+
+                        <tr class="table-primary"  style="height:40px;">
+                            <th>
+                                Hình ảnh sản phẩm
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <img style="border-radius:10%; height:400px; width:400px;" src="~/Content/CameraImages/@Model.Anh01" alt="Alternate Text" />
+                                </div>
+                                <br />
+                                <div>
+                                    <img style="border-radius:10%; height:400px; width:400px;" src="~/Content/CameraImages/@Model.Anh02" alt="Alternate Text" />
+                                </div>
+                                <br />
+                                <div>
+                                    <img style="border-radius:10%; height:400px; width:400px;" src="~/Content/CameraImages/@Model.Anh03" alt="Alternate Text" />
+                                </div>
+                            </td>
+
+                        </tr>
+                        
+                  
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
